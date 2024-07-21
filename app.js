@@ -47,7 +47,7 @@ app.post("/login",function(req,res){
     const userName=req.body.username;
     const password=req.body.password;
 
-    User.findOne({email:username})
+    User.findOne({email:userName})
     .then(function(foundUser){
         if(foundUser.password===password){
             res.render("secrets");
